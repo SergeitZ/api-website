@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter/Counter';
+import CounterCard from './common/CounterCard';
+
 
 function App() {
   const name = "Sergio";
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello {name}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{
+      display: "flex",
+      flex: "1",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "100vh",
+    }}>
+      <CounterCard />
     </div>
   );
 }
