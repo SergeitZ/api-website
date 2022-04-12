@@ -1,22 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter/Counter';
-import CounterCard from './common/CounterCard';
+import {BrowserRouter} from "react-router-dom"
+import AppRouter from './components/Routers/AppRouter';
+
 
 
 function App() {
-  const name = "Sergio";
 
   return (
-    <div className="App" style={{
-      display: "flex",
-      flex: "1",
-      justifyContent: "center",
-      alignItems: "center",
-      minHeight: "100vh",
-    }}>
-      <CounterCard />
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
