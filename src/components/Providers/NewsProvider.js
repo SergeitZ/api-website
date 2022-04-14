@@ -15,9 +15,9 @@ const NewsProvider = (props) => {
     const getNews = async (query) => {
       try {
         // const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
-        const res = await axios.get(`https://newsapi.org/v2/everything?sortBy=popularity&apiKey=${apiKey}`)
+        const res = await axios.get(`https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${apiKey}`)
         console.log(res.data);
-        setArticles(res.data);
+        setArticles(res.data.articles);
         setLoading(false);
       } catch (err) {
         console.error(err.message);
