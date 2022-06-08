@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiKey, apiUrl } from '../../config';
 import React, {useState, useEffect} from 'react';
 
 const NewsContext = React.createContext({});
@@ -8,14 +9,12 @@ const NewsProvider = (props) => {
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("javascript");
 
-  const apiKey = "59c9354dd41e4d4cb9dd81b77dc62d02"
-
   useEffect(() => {
     // get the news from the api.
     const getNews = async (query) => {
       try {
         // const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
-        const res = await axios.get(`https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${apiKey}`)
+        const res = await axios.get(`${apiUrl}q=${query}&sortBy=popularity&apiKey=${apiKey}`)
         console.log(res.data);
         setArticles(res.data.articles);
         setLoading(false);

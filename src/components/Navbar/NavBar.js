@@ -20,7 +20,7 @@ const NavBar = (props) => {
         alignItems: 'center',
         padding: '0em 1.2em'
       }}>
-        <h1 style={{color: "lightgreen"}}>Mothman!!</h1>
+        <h1 style={{color: "lightgreen"}}>Calorie Tracker</h1>
       </div>
         <div style={{
           flex: 1,
@@ -35,6 +35,7 @@ const NavBar = (props) => {
           justifyContent: 'flex-end'
         }}>
           <NavButton to="/" label="home" />
+          <NavButton to="/exercise" label="exercise" />
           <NavButton to="/news" label="news" />
     
         </div>
